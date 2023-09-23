@@ -2,7 +2,7 @@ from pathlib import Path
 
 def count_words(text):
     words_count = 0
-    for word in text:
+    for _ in text:
         words_count += 1
     return words_count
 
