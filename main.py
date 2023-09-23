@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def count_words(text):
     words_count = 0
     for word in text:
@@ -9,7 +11,7 @@ def count_letters(text):
     for word in text:
         for char in word:
             index = char.lower()
-            if index in letters_dict and index.isalpha():
+            if index in letters_dict:
                 letters_dict[index] += 1
             elif index.isalpha():
                 letters_dict[index] = 1
@@ -32,10 +34,15 @@ def print_report(count, letters):
     print("")
     print("--- End report ---")
 
-with open("books/frankenstein.txt") as f:
-    file_content = f.read()
-    text = file_content.split()
-    word_count = count_words(text)
-    sorted_letters = sort_letters(count_letters(text))
+def start_report(path):
+    with open(path) as f:
+        file_content = f.read()
+        text = file_content.split()
+        word_count = count_words(text)
+        sorted_letters = sort_letters(count_letters(text))
 
-    print_report(word_count, sorted_letters)
+        print_report(word_count, sorted_letters)
+
+data_folder = input("Enter path to text:")
+text_file = Path(data_folder)
+start_report(text_file)
