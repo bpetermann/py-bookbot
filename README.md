@@ -1,11 +1,11 @@
 ## Python Bookbot
 
-- Just started learning Python
-- First Python project as part of boot.dev curriculum
+- Get length and number of occurrences of letters in a text file
+- First Python project as part of the boot.dev curriculum
 
-## Getting started
+### Getting started
 
-```js
+```
 git clone https://github.com/bpetermann/py-bookbot.git
 cd py-bookbot
 python main.py
